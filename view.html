@@ -1,0 +1,106 @@
+{% extends "layout-bootstrap.html" %}
+
+
+    {% block content %}
+    <html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+    
+   
+    <script>
+
+        var data = {{data|tojson}}  
+
+    </script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+      
+
+    <style>
+        body{
+            background-color: #CAEBF2;
+        }
+       .container{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: white;
+        }
+        #text{
+            padding-top: 0px;
+            padding-bottom: 20px;
+        }
+        #rating{
+            padding-top: 20px;
+        }
+        #name{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            background-color:  #494e6b;
+            font-size: 25px;
+            color: white;
+        }
+        #alum_row{
+            margin:0;
+        }
+        #alums.container{
+            padding: 0px;
+            padding-left: 10px;
+        }
+       #edit_rating{
+        cursor: pointer;
+       }
+       #edit_text{
+        cursor: pointer;
+       }
+       #warning{
+           color: red;
+           font-weight: bold;
+       }
+       .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+        }
+    </style>
+
+</head>
+<body>  
+
+    <div class="container">
+        <div class="row" id="name">
+        </div>
+        <br>
+
+        <div class="row" id="link"></div>
+
+        
+        <div class="row" id="image">            
+        </div>
+
+        <div class="row">
+            <img id="edit_text" src="https://cdn.onlinewebfonts.com/svg/img_228770.png" width="20px" alt="This is the edit symbol" height="20px">          
+        </div>
+            <div class="row" id="text">
+        </div>
+        
+        <div class="row" >  Alums who approve: 
+            <div class="container" id="alums"></div>        
+        </div>
+        <div class="row" id="rating"> 
+            <img id="edit_rating" src="https://cdn.onlinewebfonts.com/svg/img_228770.png" alt="This is the edit symbol" width="20px" height="20px">Rating:          
+        </div>
+        <div class="row" id="warning">
+            Enter a number less than/= 5
+        </div>
+
+    </div>
+   
+
+</body>
+
+
+</html>
+{% endblock %}

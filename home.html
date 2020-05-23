@@ -1,0 +1,71 @@
+{% extends "layout-bootstrap.html" %}
+<html>
+    {% block content %}
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script type="text/javascript" src="{{ url_for('static', filename = 'home2.js') }}"></script>
+
+<script>
+  var activities = {{activities|tojson}} 
+    var data={{data|tojson}}
+    
+   
+</script>
+    <style>
+        body{
+            background-color: #CAEBF2;
+        }
+        #activities_entry_container{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .card-title{
+            font-size: 22px;
+        }
+        .name{
+            border: 1px solid black;
+            cursor: grab;
+        }
+        #mission{
+            font-size: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            text-align: center;
+            background-color: #494e6b;
+            color: white;
+        }
+        .bold{
+            padding-left: 10px;
+            font-weight: bold;
+            padding-right: 10px;
+
+        }
+        .card-img-top{
+            cursor: pointer;
+        }
+        .card-body{
+            padding: 20px;
+        }
+        .container{
+            padding-bottom: 20px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <br> 
+    <div class="container">
+    <div  id="mission" >Are you a <span class="bold"> STUDENT </span> looking to do <span class="bold">    FUN THINGS @ COLUMBIA?</span></div>
+   
+    <br>
+
+    <div class="card-columns" id="add-deck">
+    </div>
+
+
+</body>
+{% endblock %}
+</html>

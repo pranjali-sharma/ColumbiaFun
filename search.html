@@ -1,0 +1,77 @@
+{% extends "layout-bootstrap.html" %}
+<html>
+    {% block content %}
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script type="text/javascript" src="{{ url_for('static', filename = 'search2.js') }}"></script>
+
+<script>
+  var activities = {{activities|tojson}} 
+    var data={{data|tojson}}
+   
+   
+</script>
+    <style>
+        body{
+            background-color: #CAEBF2;
+        }
+        #activities_entry_container{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .name{
+            border: 1px solid black;
+            cursor: grab;
+        }
+        #mission{
+            font-size: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        .bold{
+            padding-left: 10px;
+            font-weight: bold;
+            padding-right: 10px;
+
+        }
+        .card-img-top{
+            background-color:#4a8dac;
+            cursor: pointer;
+        }
+
+        .card-body{
+            padding: 20px;
+        }
+        .container{
+            padding-bottom: 20px;
+        }
+        .highlight{
+            font-weight: bold;
+        }
+        .card-title{
+            font-size: 22px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="container"> 
+        <div row= "serach_word"></div>
+   
+    <div class="results_count">
+    </div>
+    
+    <div id="updates">
+          </div>
+
+    <div class="card-columns" id="add-card">
+
+    </div>
+
+
+</body>
+{% endblock %}
+</html>

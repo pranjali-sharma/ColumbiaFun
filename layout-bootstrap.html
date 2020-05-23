@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
+       
+        <script>
+
+          $(document).ready(function(){
+
+               $("#box").val("")
+              console.log("ready")
+
+              $("#box").keyup(function(event) {
+               if (event.keyCode === 13 ) {
+                var word = $("#box").val()            
+                window.location='/search/'+word; 
+
+        }
+    });
+              $("#submit_search").click(function(){                  //call AJAX
+                  //display whatver ajax returns  
+                  var word = $("#box").val()                
+                  console.log("word="+word)
+                  window.location='/search/'+word; 
+
+              })
+          });
+          
+        </script>
+    </head>
+
+    <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">LionFUN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:5000/">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/create" >Create</a>
+      </li>
+       <input id="box" placeholder="Search"></input>  <button id="submit_search">Go</button>
+  
+  </div>
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+</body>
+
+</html>

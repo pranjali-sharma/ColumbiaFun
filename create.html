@@ -1,0 +1,140 @@
+{% extends "layout-bootstrap.html" %}
+
+<html>
+    {% block content %}
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+
+    <style>
+        body{
+            background-color: #CAEBF2;
+        }
+        .row{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-weight: bold;
+
+        }
+        .brackets{
+            font-weight: 20;
+        }
+        .activity{
+            border: 1px solid black;
+            cursor: grab;
+        }
+        .warnings{
+            color: red;
+            font-weight: bold;
+        }
+        #feedback{
+            color:  #494e6b;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #link{
+            color:  #494e6b;
+            font-weight: bold;
+            font-size: 20px;             
+        }
+        #title{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            background-color:  #494e6b;
+            font-size: 25px;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+    <div class="container">
+
+        <br>
+        <div class="row" id= "title">CREATE your activity!</div>
+        <div class="row" id="feedback"></div>
+        <div class="row" id="link"></div>
+
+
+        <div class="row" id="activity_name">
+            <div class="col-4">
+                Activity: 
+            </div>
+            <div class="col-4">
+                <input size="40" id="name"></input>
+            </div> 
+            <div class="name warnings col-4">
+                Warning: Fill in field
+            </div>            
+        </div>
+    
+        <div class="row" id="activity_image">
+            <div class="col-4">
+                Image URL: 
+            </div>
+            <div class="col-4">
+                <input size="40" id="image"></input>
+            </div>  
+            <div class="image warnings col-4">
+                Warning: Fill in field
+            </div>             
+        </div>
+    
+        <div class="row" id="activity_text">
+            <div class="col-4">
+                Description: 
+            </div>
+            <div class="col-4">
+                <input size="40" id="text"></input>
+            </div>     
+            <div class="text warnings col-4">
+                Warning: Fill in field
+            </div>          
+        </div>
+    
+        <div class="row" id="activity_rating">
+            <div class="col-4">
+                Rating <span class="brackets">(out of 5)</span>: 
+            </div>
+            <div class="col-4">
+                <input size="40" id="rating"></input>
+            </div> 
+            <div class="rating warnings col-5">
+                Warning: Value must be an number less than 5
+            </div>              
+        </div>
+    
+        <div class="row" id="activity_alums">
+            <div class="col-4">
+               Alums who approve <span class="brackets">(enter comma separated names)</span>: 
+            </div>
+            <div class="col-4">
+                <input size="40" id="alums"></input>
+            </div> 
+            <div class="alums warnings col-4">
+                Warning: Fill in field
+            </div>              
+        </div>
+
+        <div id="link"></div>
+        <div id="submit">
+            <button id="submit-btn">Submit</button>
+        </div>       
+        
+    
+    </div>
+    
+   
+</body>
+{% endblock %}
+
+</html>
